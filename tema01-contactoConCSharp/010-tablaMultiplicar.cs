@@ -1,5 +1,5 @@
 /*
-Vicente Descals Cabanes
+Vicente (...)
 Tablas de multiplicar
 */
 
