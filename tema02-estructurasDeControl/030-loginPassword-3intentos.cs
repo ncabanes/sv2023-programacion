@@ -28,7 +28,7 @@ class Ejercicio_30
             contrasenya = Convert.ToInt32(Console.ReadLine());
             intento = intento - 1;
             
-            if (login != 1000 && contrasenya != 1234)
+            if (login != 1000 || contrasenya != 1234)
             {
                 Console.WriteLine("");
                 Console.WriteLine("Usuario o contraseña incorrecto.");
@@ -36,7 +36,7 @@ class Ejercicio_30
                 Console.WriteLine("");
             }
         }
-        while (login != 1000 && contrasenya != 1234 && intento > 0);
+        while ((login != 1000 || contrasenya != 1234) && intento > 0);
         
         if (login == 1000 && contrasenya == 1234)
         {
