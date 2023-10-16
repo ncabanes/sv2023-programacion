@@ -31,9 +31,9 @@ class Ejercicio37
         Console.Write("Ancho? ");
         ancho = Convert.ToInt32(Console.ReadLine());
         
-        for (int fila=0; fila<alto; fila++) 
+        for (int fila=1; fila <= alto; fila++) 
         {
-            for (int columna=0; columna<ancho; columna++) 
+            for (int columna=1; columna <= ancho; columna++) 
             {
                 Console.Write("*");
             }
