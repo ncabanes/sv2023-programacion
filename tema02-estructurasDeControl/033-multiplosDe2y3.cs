@@ -29,7 +29,7 @@ class Ejercicio33
         Console.Write("Número final? ");
         n2 = Convert.ToInt32(Console.ReadLine());
         
-        for (int i = n1; i < n2; i++)
+        for (int i = n1; i <= n2; i++)
         {
             if (i % 2 == 0 && i % 3 == 0)
             {
