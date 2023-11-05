@@ -13,7 +13,8 @@ que no emplee constantes convencionales sino una enumeración.
     0. Salir
     1
     Ha escogido la opción "1": "Ver datos existentes"
-Julio
+
+Julio, retoques por Nacho
  */
 
 using System;
@@ -24,31 +25,38 @@ class MenuENUM
 
     public static void Main()
     {
-        Console.WriteLine("Escoge una opcion: ");
-        Console.WriteLine("1. Ver datos existentes");
-        Console.WriteLine("2. Añadir un nuevo dato");
-        Console.WriteLine("3. Buscar");
-        Console.WriteLine("0. Salir");
-        byte opcionElegida = Convert.ToByte(Console.ReadLine());
-        Console.Write("Ha escogido la opción \"" + opcionElegida + "\": ");
-
-        switch (opcionElegida)
+        byte opcion;
+        
+        do
         {
-            case (byte) Opciones.VER:
-                Console.Write("\"Ver datos existentes\"");
-                break;
-            case (byte) Opciones.ANYADIR:
-                Console.Write("\"Añadir un nuevo dato\"");
-                break;
-            case (byte) Opciones.BUSCAR:
-                Console.Write("\"Buscar\"");
-                break;
-            case (byte) Opciones.SALIR:
-                Console.Write("\"Salir\"");
-                break;
-            default:
-                Console.WriteLine("Error. Esta opción no existe");
-                break;
+            Console.WriteLine("Escoge una opcion: ");
+            Console.WriteLine((byte) Opciones.VER +". Ver datos existentes");
+            Console.WriteLine((byte) Opciones.ANYADIR+". Añadir un nuevo dato");
+            Console.WriteLine((byte) Opciones.BUSCAR+". Buscar");
+            Console.WriteLine((byte) Opciones.SALIR+". Salir");
+            opcion = Convert.ToByte(Console.ReadLine());
+            Console.Write("Ha escogido la opción \"" + opcion + "\": ");
+
+            switch (opcion)
+            {
+                case (byte) Opciones.VER:
+                    Console.Write("\"Ver datos existentes\"");
+                    break;
+                case (byte) Opciones.ANYADIR:
+                    Console.Write("\"Añadir un nuevo dato\"");
+                    break;
+                case (byte) Opciones.BUSCAR:
+                    Console.Write("\"Buscar\"");
+                    break;
+                case (byte) Opciones.SALIR:
+                    Console.Write("\"Salir\"");
+                    break;
+                default:
+                    Console.WriteLine("Error. Esta opción no existe");
+                    break;
+            }
+            Console.WriteLine();
         }
+        while (opcion != (byte) Opciones.SALIR);
     }
 }

@@ -15,41 +15,48 @@ que no utilice "números mágicos" en la orden "switch", sino constantes.
     1
     Ha escogido la opción "1": "Ver datos existentes"
 
- Julio
+Julio, retoques por Nacho
  */
 
 using System;
 
 class MenuConst
 {
-    public static void Main()
+    static void Main()
     {
         const byte SALIR = 0, VER = 1, ANYADIR = 2, BUSCAR = 3;
-        Console.WriteLine("Escoge una opcion: ");
-        Console.WriteLine("1. Ver datos existentes");
-        Console.WriteLine("2. Añadir un nuevo dato");
-        Console.WriteLine("3. Buscar");
-        Console.WriteLine("0. Salir");
-        byte opcionElegida = Convert.ToByte(Console.ReadLine());
-        Console.Write("Ha escogido la opción \"" + opcionElegida + "\": ");
-
-        switch (opcionElegida)
+        byte opcion;
+        
+        do
         {
-            case VER:
-                Console.Write("\"Ver datos existentes\"");
-                break;
-            case ANYADIR:
-                Console.Write("\"Añadir un nuevo dato\"");
-                break;
-            case BUSCAR:
-                Console.Write("\"Buscar\"");
-                break;
-            case SALIR:
-                Console.Write("\"Salir\"");
-                break;
-            default:
-                Console.WriteLine("Error. Esta opción no existe");
-                break;
+            Console.WriteLine("Escoge una opcion: ");
+            Console.WriteLine(VER+". Ver datos existentes");
+            Console.WriteLine(ANYADIR+". Añadir un nuevo dato");
+            Console.WriteLine(BUSCAR+". Buscar");
+            Console.WriteLine(SALIR+". Salir");
+            opcion = Convert.ToByte(Console.ReadLine());
+            Console.Write("Ha escogido la opción \"" + opcion + "\": ");
+
+            switch (opcion)
+            {
+                case VER:
+                    Console.Write("\"Ver datos existentes\"");
+                    break;
+                case ANYADIR:
+                    Console.Write("\"Añadir un nuevo dato\"");
+                    break;
+                case BUSCAR:
+                    Console.Write("\"Buscar\"");
+                    break;
+                case SALIR:
+                    Console.Write("\"Salir\"");
+                    break;
+                default:
+                    Console.WriteLine("Error. Esta opción no existe");
+                    break;
+            }
+            Console.WriteLine();
         }
+        while (opcion != SALIR);
     }
 }
