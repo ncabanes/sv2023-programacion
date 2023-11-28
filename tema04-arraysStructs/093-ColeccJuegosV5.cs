@@ -1,66 +1,66 @@
 /*
 
-93. Gestor de colección de juegos, versión 5 (basado en el examen de 2014-2015, 
+93. Gestor de colecciÃ³n de juegos, versiÃ³n 5 (basado en el examen de 2014-2015, 
 tema 4, grupo presencial)
 
 Crea un programa en C# que permita almacenar hasta 10000 juegos de ordenador o consola.
-Para cada juego, debe permitir al usuario almacenar la siguiente información:
+Para cada juego, debe permitir al usuario almacenar la siguiente informaciÃ³n:
 
- • Título (por ejemplo, GranTurismo 6)
+ â€¢ TÃ­tulo (por ejemplo, GranTurismo 6)
 
- • Plataforma (por ejemplo, PS3)
+ â€¢ Plataforma (por ejemplo, PS3)
 
- • Categoría (por ejemplo, carreras)
+ â€¢ CategorÃ­a (por ejemplo, carreras)
 
- • Espacio ocupado (en MB, número entero)
+ â€¢ Espacio ocupado (en MB, nÃºmero entero)
 
- • Fecha de lanzamiento (mes y año, en forma de struct anidado) (por ejemplo 2013, 12)
+ â€¢ Fecha de lanzamiento (mes y aÃ±o, en forma de struct anidado) (por ejemplo 2013, 12)
 
- • Valoración (por ejemplo, 8.7)
+ â€¢ ValoraciÃ³n (por ejemplo, 8.7)
 
 El programa debe permitir al usuario realizar las siguientes operaciones:
 
-1 - Añadir un nuevo juego (al final de los datos existentes). El título y la 
-plataforma no deben estar vacíos. El año, si se introduce, debe ser de 1940 a 
-2100. La valoración, si se introduce, debe ser de 0 a 10. No se debe realizar 
-ninguna otra validación.
+1 - AÃ±adir un nuevo juego (al final de los datos existentes). El tÃ­tulo y la 
+plataforma no deben estar vacÃ­os. El aÃ±o, si se introduce, debe ser de 1940 a 
+2100. La valoraciÃ³n, si se introduce, debe ser de 0 a 10. No se debe realizar 
+ninguna otra validaciÃ³n.
 
-2 - Mostrar nombre, categoría y plataforma de todos los juegos almacenados (los 
-tres datos en una misma línea, con el formato "GranTurismo 6 - Carreras (PS3)". 
-Cada juego debe aparecer en una línea distinta, precedido por el número de 
-registro (empezando a contar desde 1). Si hay más de 22 juegos, se deberá hacer 
+2 - Mostrar nombre, categorÃ­a y plataforma de todos los juegos almacenados (los 
+tres datos en una misma lÃ­nea, con el formato "GranTurismo 6 - Carreras (PS3)". 
+Cada juego debe aparecer en una lÃ­nea distinta, precedido por el nÃºmero de 
+registro (empezando a contar desde 1). Si hay mÃ¡s de 22 juegos, se deberÃ¡ hacer 
 una pausa tras mostrar cada bloque de 22 juegos, y esperar a que el usuario 
-pulse Intro antes de seguir. Se deberá avisar si no hay datos.
+pulse Intro antes de seguir. Se deberÃ¡ avisar si no hay datos.
 
-3 - Ver todos los datos de un cierto juego (a partir de su número de registro  
-o bien de su título exacto -sin distinción de mayúsculas y minúsculas-, según 
-elija el usuario), contando desde 1). Se deberá avisar (pero no volver a pedir) 
-si el número no es válido.
+3 - Ver todos los datos de un cierto juego (a partir de su nÃºmero de registro  
+o bien de su tÃ­tulo exacto -sin distinciÃ³n de mayÃºsculas y minÃºsculas-, segÃºn 
+elija el usuario), contando desde 1). Se deberÃ¡ avisar (pero no volver a pedir) 
+si el nÃºmero no es vÃ¡lido.
 
-4 - Buscar juegos que contengan un determinado texto (búsqueda parcial, en 
-cualquier campo de texto, sin distinción de mayúsculas y minúsculas). Debe 
-mostrar el número de registro, el título, la plataforma, el año y la 
-valoración, haciendo una pausa después de cada 22 filas.
+4 - Buscar juegos que contengan un determinado texto (bÃºsqueda parcial, en 
+cualquier campo de texto, sin distinciÃ³n de mayÃºsculas y minÃºsculas). Debe 
+mostrar el nÃºmero de registro, el tÃ­tulo, la plataforma, el aÃ±o y la 
+valoraciÃ³n, haciendo una pausa despuÃ©s de cada 22 filas.
 
-5 - Modificar un registro: pedirá al usuario su número, mostrará el valor 
-anterior de cada campo y permitirá pulsar Intro para no modificar alguno de los 
+5 - Modificar un registro: pedirÃ¡ al usuario su nÃºmero, mostrarÃ¡ el valor 
+anterior de cada campo y permitirÃ¡ pulsar Intro para no modificar alguno de los 
 datos. Se debe avisar al usuario (pero no volver a pedir) si introduce un 
-número de registro incorrecto . El año y la calificación, si se modifican, 
-deben ser válidos.
+nÃºmero de registro incorrecto . El aÃ±o y la calificaciÃ³n, si se modifican, 
+deben ser vÃ¡lidos.
 
-6 - Borrar un registro, en la posición indicada por el usuario. Se le debe 
-avisar (pero no volver a preguntar) si introduce un número de registro 
+6 - Borrar un registro, en la posiciÃ³n indicada por el usuario. Se le debe 
+avisar (pero no volver a preguntar) si introduce un nÃºmero de registro 
 incorrecto. Debe mostrar el registro que se va a eliminar y solicitar 
-confirmación antes de la eliminación.
+confirmaciÃ³n antes de la eliminaciÃ³n.
 
-7 - Ordenar los datos alfabéticamente, por título y (en caso de coincidir el 
-título) por plataforma.
+7 - Ordenar los datos alfabÃ©ticamente, por tÃ­tulo y (en caso de coincidir el 
+tÃ­tulo) por plataforma.
 
 8 - Eliminar espacios redundantes: eliminar espacios finales, espacios 
-iniciales y espacios duplicados en el título, la plataforma y la categoría.
+iniciales y espacios duplicados en el tÃ­tulo, la plataforma y la categorÃ­a.
 
-T - Terminar (como no sabemos almacenar la información en archivo ni base de 
-datos, la información se perderá).
+T - Terminar (como no sabemos almacenar la informaciÃ³n en archivo ni base de 
+datos, la informaciÃ³n se perderÃ¡).
 
 */
 
@@ -90,7 +90,7 @@ class ColeccionJuegos
         const string TERMINAR = "T", ANYADIR = "1", VER_TODOS = "2", VER_UNO = "3",
             BUSCAR = "4", MODIFICAR = "5", BORRAR = "6", ORDENAR = "7", REDUNDANCIAS = "8";
         const uint capacidadMax = 10000;
-        TipoJuego[] colecion = new TipoJuego[capacidadMax];
+        TipoJuego[] coleccion = new TipoJuego[capacidadMax];
         int contadorReg = 0;
         string opcionElegida;
         int verMaxPagina = 22;
@@ -98,8 +98,8 @@ class ColeccionJuegos
         do
         {
             Console.WriteLine();
-            Console.WriteLine("       - MENÚ - ");
-            Console.WriteLine(ANYADIR + "- Añadir un nuevo juego");
+            Console.WriteLine("       - MENÃš - ");
+            Console.WriteLine(ANYADIR + "- AÃ±adir un nuevo juego");
             Console.WriteLine(VER_TODOS + "- Mostrar datos de los juegos almacenados");
             Console.WriteLine(VER_UNO + "- Ver todos los datos de un cierto juego");
             Console.WriteLine(BUSCAR + "- Buscar juego");
@@ -124,36 +124,36 @@ class ColeccionJuegos
                     {
                         do
                         {
-                            Console.Write("Introduce un título: ");
-                            colecion[contadorReg].titulo = Console.ReadLine();
+                            Console.Write("Introduce un tÃ­tulo: ");
+                            coleccion[contadorReg].titulo = Console.ReadLine();
                         }
-                        while (colecion[contadorReg].titulo == "");
+                        while (coleccion[contadorReg].titulo == "");
 
                         do
                         {
                             Console.Write("Introduce plataforma: ");
-                            colecion[contadorReg].plataforma = Console.ReadLine();
+                            coleccion[contadorReg].plataforma = Console.ReadLine();
                         }
-                        while (colecion[contadorReg].plataforma == "");
+                        while (coleccion[contadorReg].plataforma == "");
 
-                        Console.Write("Introduce la categoría: ");
-                        colecion[contadorReg].categoria = Console.ReadLine();
+                        Console.Write("Introduce la categorÃ­a: ");
+                        coleccion[contadorReg].categoria = Console.ReadLine();
 
                         Console.Write("Introduce espacio ocupado: ");
-                        colecion[contadorReg].espacioOcupado =
+                        coleccion[contadorReg].espacioOcupado =
                             Convert.ToInt32(Console.ReadLine());
 
                         string anyo = "";
                         do
                         {
-                            Console.Write("Fecha, año lanzamiento (entre 1940 y 2100): ");
+                            Console.Write("Fecha, aÃ±o lanzamiento (entre 1940 y 2100): ");
                             anyo = Console.ReadLine();
-                            colecion[contadorReg].fecha.anyo = anyo;
+                            coleccion[contadorReg].fecha.anyo = anyo;
                         }
                         while (Convert.ToSingle(anyo) < 1940 || Convert.ToSingle(anyo) > 2100);
 
                         Console.Write("mes: ");
-                        colecion[contadorReg].fecha.mes = Console.ReadLine();
+                        coleccion[contadorReg].fecha.mes = Console.ReadLine();
 
                         string valoracion = "";
                         do
@@ -162,16 +162,16 @@ class ColeccionJuegos
                             valoracion = Console.ReadLine();
                             if (valoracion == "")
                             {
-                                colecion[contadorReg].valoracion = -1;
+                                coleccion[contadorReg].valoracion = -1;
                             }
                             else
                             {
-                                colecion[contadorReg].valoracion = Convert.ToSingle(valoracion);
+                                coleccion[contadorReg].valoracion = Convert.ToSingle(valoracion);
                             }
                         } while (!
-                            ((colecion[contadorReg].valoracion == -1)
-                            || (colecion[contadorReg].valoracion >= 0 
-                                && colecion[contadorReg].valoracion <= 10))
+                            ((coleccion[contadorReg].valoracion == -1)
+                            || (coleccion[contadorReg].valoracion >= 0 
+                                && coleccion[contadorReg].valoracion <= 10))
                         );
                         contadorReg++;
                     }
@@ -183,8 +183,8 @@ class ColeccionJuegos
                         for (int i = 0; i < contadorReg; i++)
                         {
                             Console.WriteLine("{0}: {1} - {2} ({3})", i + 1,
-                                colecion[i].titulo, colecion[i].categoria,
-                                colecion[i].plataforma);
+                                coleccion[i].titulo, coleccion[i].categoria,
+                                coleccion[i].plataforma);
                             if ((i + 1) % verMaxPagina == 0)
                             {
                                 Console.ReadLine();
@@ -197,47 +197,47 @@ class ColeccionJuegos
                     break;
 
                 case VER_UNO:
-                    Console.WriteLine("-Opciones de búsqueda-");
-                    Console.WriteLine("1.- Buscar por nº de registro");
+                    Console.WriteLine("-Opciones de bÃºsqueda-");
+                    Console.WriteLine("1.- Buscar por nÂº de registro");
                     Console.WriteLine("2.- Buscar por titulo exacto");
                     string opcionBuscar = Console.ReadLine();
 
                     if (opcionBuscar == "1")
                     {
-                        Console.Write("Introduce un nº de registro de 1 a " + (contadorReg) + " ");
+                        Console.Write("Introduce un nÂº de registro de 1 a " + (contadorReg) + " ");
                         int numRegMostrar = Convert.ToInt32(Console.ReadLine()) - 1;
                         if (numRegMostrar >= 0 && numRegMostrar < contadorReg)
                         {
-                            Console.Write("Titulo: " + colecion[numRegMostrar].titulo + "| ");
-                            Console.Write("Plataforma: " + colecion[numRegMostrar].plataforma + "| ");
-                            Console.Write("Categoría: " + colecion[numRegMostrar].categoria + "| ");
-                            Console.Write("Espacio Ocupado: " + colecion[numRegMostrar].espacioOcupado + "| ");
-                            Console.Write("Fecha: año: " + colecion[numRegMostrar].fecha.anyo + ", ");
-                            Console.Write("mes: " + colecion[numRegMostrar].fecha.mes + "| ");
-                            Console.Write("Valoracion: " + colecion[numRegMostrar].valoracion);
+                            Console.Write("Titulo: " + coleccion[numRegMostrar].titulo + "| ");
+                            Console.Write("Plataforma: " + coleccion[numRegMostrar].plataforma + "| ");
+                            Console.Write("CategorÃ­a: " + coleccion[numRegMostrar].categoria + "| ");
+                            Console.Write("Espacio Ocupado: " + coleccion[numRegMostrar].espacioOcupado + "| ");
+                            Console.Write("Fecha: aÃ±o: " + coleccion[numRegMostrar].fecha.anyo + ", ");
+                            Console.Write("mes: " + coleccion[numRegMostrar].fecha.mes + "| ");
+                            Console.Write("Valoracion: " + coleccion[numRegMostrar].valoracion);
                             Console.WriteLine();
                         }
                         else
-                            Console.WriteLine("Error, nº registro no válido");
+                            Console.WriteLine("Error, nÂº registro no vÃ¡lido");
                     }
 
                     else if (opcionBuscar == "2")
                     {
-                        Console.Write("Introduce el título: ");
+                        Console.Write("Introduce el tÃ­tulo: ");
                         string tituloBuscar = Console.ReadLine();
                         bool encontrado = false;
                         Console.WriteLine();
                         for (int i = 0; i < contadorReg; i++)
                         {
-                            if (colecion[i].titulo.ToUpper() == tituloBuscar.ToUpper())
+                            if (coleccion[i].titulo.ToUpper() == tituloBuscar.ToUpper())
                             {
-                                Console.Write("Título: " + colecion[i].titulo + "| ");
-                                Console.Write("Plataforma: " + colecion[i].plataforma + "| ");
-                                Console.Write("Categoría: " + colecion[i].categoria + "| ");
-                                Console.Write("Espacio Ocupado: " + colecion[i].espacioOcupado + "| ");
-                                Console.Write("Fecha: año: " + colecion[i].fecha.anyo + ", ");
-                                Console.Write("mes: " + colecion[i].fecha.mes + "| ");
-                                Console.Write("Valoración: " + colecion[i].valoracion);
+                                Console.Write("TÃ­tulo: " + coleccion[i].titulo + "| ");
+                                Console.Write("Plataforma: " + coleccion[i].plataforma + "| ");
+                                Console.Write("CategorÃ­a: " + coleccion[i].categoria + "| ");
+                                Console.Write("Espacio Ocupado: " + coleccion[i].espacioOcupado + "| ");
+                                Console.Write("Fecha: aÃ±o: " + coleccion[i].fecha.anyo + ", ");
+                                Console.Write("mes: " + coleccion[i].fecha.mes + "| ");
+                                Console.Write("ValoraciÃ³n: " + coleccion[i].valoracion);
                                 encontrado = true;
                                 Console.WriteLine();
                             }
@@ -248,7 +248,7 @@ class ColeccionJuegos
                     }
                     else
                     {
-                        Console.WriteLine("Opción de búsqueda no válida");
+                        Console.WriteLine("OpciÃ³n de bÃºsqueda no vÃ¡lida");
                     }
                     break;
 
@@ -261,14 +261,14 @@ class ColeccionJuegos
 
                         for (int i = 0; i < contadorReg; i++)
                         {
-                            if (colecion[i].titulo.ToUpper().Contains(textoBuscar.ToUpper()) ||
-                                colecion[i].plataforma.ToUpper().Contains(textoBuscar.ToUpper()) ||
-                                colecion[i].categoria.ToUpper().Contains(textoBuscar.ToUpper()))
+                            if (coleccion[i].titulo.ToUpper().Contains(textoBuscar.ToUpper()) ||
+                                coleccion[i].plataforma.ToUpper().Contains(textoBuscar.ToUpper()) ||
+                                coleccion[i].categoria.ToUpper().Contains(textoBuscar.ToUpper()))
                             {
                                 cantidadEncontrados++;
                                 Console.WriteLine("{0}: {1} - {2} ({3})", i + 1,
-                                    colecion[i].titulo, colecion[i].categoria,
-                                    colecion[i].plataforma);
+                                    coleccion[i].titulo, coleccion[i].categoria,
+                                    coleccion[i].plataforma);
 
                                 if (cantidadEncontrados == verMaxPagina)
                                 {
@@ -280,7 +280,7 @@ class ColeccionJuegos
                             }
                         }
                         if (cantidadEncontrados == 0)
-                            Console.WriteLine("No se ha encontrado ningún texto por " + "\""
+                            Console.WriteLine("No se ha encontrado ningÃºn texto por " + "\""
                                 + textoBuscar + "\"");
                     }
                     else
@@ -288,43 +288,43 @@ class ColeccionJuegos
                     break;
 
                 case MODIFICAR:
-                    Console.Write("Introduce un nº de resgistro de 1 a "
+                    Console.Write("Introduce un nÂº de resgistro de 1 a "
                         + contadorReg + " para modificar: ");
                     int numRegModificar = Convert.ToInt32(Console.ReadLine()) - 1;
                     Console.WriteLine();
 
                     if (numRegModificar >= 0 && numRegModificar < contadorReg)
                     {
-                        Console.WriteLine("Título: " + colecion[numRegModificar].titulo);
-                        Console.Write("Nuevo título? ");
+                        Console.WriteLine("TÃ­tulo: " + coleccion[numRegModificar].titulo);
+                        Console.Write("Nuevo tÃ­tulo? ");
                         string nuevoTitulo = Console.ReadLine();
                         if (nuevoTitulo != "")
-                            colecion[numRegModificar].titulo = nuevoTitulo;
+                            coleccion[numRegModificar].titulo = nuevoTitulo;
 
-                        Console.WriteLine("Plataforma: " + colecion[numRegModificar].plataforma);
+                        Console.WriteLine("Plataforma: " + coleccion[numRegModificar].plataforma);
                         Console.Write("Nueva plataforma? ");
                         string nuevaPlataforma = Console.ReadLine();
                         if (nuevaPlataforma != "")
-                            colecion[numRegModificar].plataforma = nuevaPlataforma;
+                            coleccion[numRegModificar].plataforma = nuevaPlataforma;
 
-                        Console.WriteLine("Categoría: " +
-                            colecion[numRegModificar].categoria);
-                        Console.Write("Nueva categoría? ");
+                        Console.WriteLine("CategorÃ­a: " +
+                            coleccion[numRegModificar].categoria);
+                        Console.Write("Nueva categorÃ­a? ");
                         string nuevaCategoria = Console.ReadLine();
                         if (nuevaPlataforma != "")
-                            colecion[numRegModificar].categoria = nuevaCategoria;
+                            coleccion[numRegModificar].categoria = nuevaCategoria;
 
                         Console.WriteLine("Espacio Ocupado: "
-                            + colecion[numRegModificar].espacioOcupado);
+                            + coleccion[numRegModificar].espacioOcupado);
                         Console.Write("Nuevo espacio ocupado? ");
                         string nuevoEspacioOcu = Console.ReadLine();
                         if (nuevoEspacioOcu != "")
-                            colecion[numRegModificar].espacioOcupado
+                            coleccion[numRegModificar].espacioOcupado
                                 = Convert.ToInt32(nuevoEspacioOcu);
 
-                        Console.WriteLine("Fecha, año lanzamiento(entre 1940 y 2100): " +
-                            colecion[numRegModificar].fecha.anyo);
-                        Console.Write("Nuevo año? ");
+                        Console.WriteLine("Fecha, aÃ±o lanzamiento(entre 1940 y 2100): " +
+                            coleccion[numRegModificar].fecha.anyo);
+                        Console.Write("Nuevo aÃ±o? ");
                         string nuevoAnyo = Console.ReadLine();
 
                         if (nuevoAnyo != "")
@@ -332,22 +332,22 @@ class ColeccionJuegos
                             if (Convert.ToInt32(nuevoAnyo) < 1940
                                 || Convert.ToInt32(nuevoAnyo) > 2100)
                             {
-                                Console.WriteLine("Año no válido. No se cambiará.");
+                                Console.WriteLine("AÃ±o no vÃ¡lido. No se cambiarÃ¡.");
                             }
                             else
                             {
-                                colecion[numRegModificar].fecha.anyo = nuevoAnyo;
+                                coleccion[numRegModificar].fecha.anyo = nuevoAnyo;
                             }
                         }
 
-                        Console.WriteLine("Mes " + colecion[numRegModificar].fecha.mes);
+                        Console.WriteLine("Mes " + coleccion[numRegModificar].fecha.mes);
                         Console.Write("Nuevo mes? ");
                         string nuevoMes = Console.ReadLine();
 
                         if (nuevoMes != "")
-                            colecion[numRegModificar].fecha.mes = nuevoMes;
+                            coleccion[numRegModificar].fecha.mes = nuevoMes;
 
-                        Console.WriteLine("Valoracion: " + colecion[numRegModificar].valoracion);
+                        Console.WriteLine("Valoracion: " + coleccion[numRegModificar].valoracion);
                         Console.Write("Cambiar valoracion? ");
                         string nuevaValoracion = Console.ReadLine();
 
@@ -356,21 +356,21 @@ class ColeccionJuegos
                             if (Convert.ToSingle(nuevaValoracion) < 0
                                 || Convert.ToSingle(nuevaValoracion) > 10)
                             {
-                                Console.WriteLine("Valoración no válida. No se cambiará.");
+                                Console.WriteLine("ValoraciÃ³n no vÃ¡lida. No se cambiarÃ¡.");
                             }
                             else
                             {
-                                colecion[numRegModificar].valoracion = Convert.ToSingle(nuevaValoracion);
+                                coleccion[numRegModificar].valoracion = Convert.ToSingle(nuevaValoracion);
                             }
                         }
                         Console.WriteLine();
                     }
                     else
-                        Console.WriteLine("Error, nº registro no válido");
+                        Console.WriteLine("Error, nÂº registro no vÃ¡lido");
                     break;
 
                 case BORRAR:
-                    Console.Write("Introduce un nº de resgistro de 1 a " +
+                    Console.Write("Introduce un nÂº de resgistro de 1 a " +
                         (contadorReg) + " para modificar: ");
                     int numRegBorrar = Convert.ToInt32(Console.ReadLine()) - 1;
                     Console.WriteLine();
@@ -378,9 +378,9 @@ class ColeccionJuegos
                     if (numRegBorrar >= 0 && numRegBorrar < contadorReg)
                     {
                         Console.WriteLine("{0}: {1} - {2} ({3})", numRegBorrar + 1,
-                                colecion[numRegBorrar].titulo,
-                                colecion[numRegBorrar].categoria,
-                                colecion[numRegBorrar].plataforma);
+                                coleccion[numRegBorrar].titulo,
+                                coleccion[numRegBorrar].categoria,
+                                coleccion[numRegBorrar].plataforma);
                         Console.WriteLine("Eliminar la ficha, si o no?");
                         string confirmarEliminar = Console.ReadLine().ToUpper();
 
@@ -388,15 +388,15 @@ class ColeccionJuegos
                         {
                             for (int i = numRegBorrar; i < contadorReg; i++)
                             {
-                                colecion[i] = colecion[i + 1];
+                                coleccion[i] = coleccion[i + 1];
                             }
                             contadorReg--;
-                            Console.WriteLine("nºReg " + "\""
+                            Console.WriteLine("nÂºReg " + "\""
                                 + (numRegBorrar + 1) + "\" Eliminado ");
                         }
                     }
                     else
-                        Console.WriteLine("Error, nº registro no válido");
+                        Console.WriteLine("Error, nÂº registro no vÃ¡lido");
                     break;
 
                 case ORDENAR:
@@ -405,23 +405,23 @@ class ColeccionJuegos
                         for (int j = i + 1; j < contadorReg; j++)
                         {
                             if ( // Por titulo, si son distintos
-                                String.Compare(colecion[i].titulo,
-                                    colecion[j].titulo, true) > 0 ||
-                                 // Por plataforma, si coincide el título
+                                String.Compare(coleccion[i].titulo,
+                                    coleccion[j].titulo, true) > 0 ||
+                                 // Por plataforma, si coincide el tÃ­tulo
                                  (
-                                    (colecion[i].titulo.ToUpper() ==
-                                        colecion[i].titulo.ToUpper()) &&
-                                    String.Compare(colecion[i].plataforma,
-                                        colecion[j].plataforma, true) > 0)
+                                    (coleccion[i].titulo.ToUpper() ==
+                                        coleccion[i].titulo.ToUpper()) &&
+                                    String.Compare(coleccion[i].plataforma,
+                                        coleccion[j].plataforma, true) > 0)
                                 )
                             {
-                                TipoJuego aux = colecion[i];
-                                colecion[i] = colecion[j];
-                                colecion[j] = aux;
+                                TipoJuego aux = coleccion[i];
+                                coleccion[i] = coleccion[j];
+                                coleccion[j] = aux;
                             }
                         }
                     }
-                    Console.WriteLine("Ordenados alfabéticamente título - plataforma");
+                    Console.WriteLine("Ordenados alfabÃ©ticamente tÃ­tulo - plataforma");
                     break;
 
                 case REDUNDANCIAS:
@@ -429,25 +429,25 @@ class ColeccionJuegos
                     {
                         for (int i = 0; i < contadorReg; i++)
                         {
-                            colecion[i].titulo = colecion[i].titulo.Trim();
-                            while (colecion[i].titulo.Contains("  "))
+                            coleccion[i].titulo = coleccion[i].titulo.Trim();
+                            while (coleccion[i].titulo.Contains("  "))
                             {
-                                colecion[i].titulo =
-                                    colecion[i].titulo.Replace("  ", " ");
+                                coleccion[i].titulo =
+                                    coleccion[i].titulo.Replace("  ", " ");
                             }
 
-                            colecion[i].plataforma = colecion[i].plataforma.Trim();
-                            while (colecion[i].plataforma.Contains("  "))
+                            coleccion[i].plataforma = coleccion[i].plataforma.Trim();
+                            while (coleccion[i].plataforma.Contains("  "))
                             {
-                                colecion[i].plataforma =
-                                    colecion[i].plataforma.Replace("  ", " ");
+                                coleccion[i].plataforma =
+                                    coleccion[i].plataforma.Replace("  ", " ");
                             }
 
-                            colecion[i].categoria = colecion[i].categoria.Trim();
-                            while (colecion[i].categoria.Contains("  "))
+                            coleccion[i].categoria = coleccion[i].categoria.Trim();
+                            while (coleccion[i].categoria.Contains("  "))
                             {
-                                colecion[i].categoria =
-                                    colecion[i].categoria.Replace("  ", " ");
+                                coleccion[i].categoria =
+                                    coleccion[i].categoria.Replace("  ", " ");
                             }
                         }
                         Console.WriteLine("Eliminados espacios sobrantes");
