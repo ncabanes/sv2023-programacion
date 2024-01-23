@@ -69,25 +69,34 @@ class SpriteTextoColor : SpriteTexto
         x = xInicial; 
         y = yInicial;
         caracter = caracterInicial;
-        color = CambiarColor(colorInicial);
+        color = colorInicial;
+    }
+    
+    public void Dibujar()
+    {
+        CambiarColor(color);
+        Console.SetCursorPosition(x, y);
+        Console.Write(caracter);
     }
 
-    public string CambiarColor(string color)
+    public void CambiarColor(string color)
     {
         if (color == "amarillo")
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
         }
-        if (color == "blanco")
+        else if (color == "blanco")
         {
             Console.ForegroundColor = ConsoleColor.White;
         }
-        if (color == "cyan")
+        else if (color == "cyan")
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
         }
-        
-        return color;
+        else
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+        }
     }
 }
 
@@ -99,7 +108,7 @@ class NaveEnemiga : SpriteTextoColor
     {
         x = xInicial; 
         y = yInicial;
-        color = CambiarColor("cyan");
+        color = "cyan";
         caracter = 'W';
     }
 }
@@ -112,7 +121,7 @@ class NaveJugador : SpriteTextoColor
     {
         x = xInicial; 
         y = yInicial;
-        color = CambiarColor("amarillo");
+        color = "amarillo";
         caracter = 'A';
     }
 }
