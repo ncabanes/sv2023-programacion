@@ -15,7 +15,7 @@ class SpriteTexto
     
     public int GetX() { return x; }
     public int GetY() {return y; }
-    public int GetCaracter() {return caracter; }
+    public char GetCaracter() {return caracter; }
     
     public void SetX(int nuevaX) { x = nuevaX; }
     public void SetY(int nuevaY) { y = nuevaY; }
