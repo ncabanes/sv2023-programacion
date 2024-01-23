@@ -1,18 +1,8 @@
-﻿/*
-140. Crea una nueva versión de la clase "Pez" (ejercicio 106), que incluya un 
-constructor que prefije su nombre y su especie. También tendrá dos atributos x 
-e y, que indiquen su posición en pantalla, para los cuales habrá getters y 
-setters, y que se podrán fijar también desde un segundo constructor que dé 
-valor a todos los atributos. Al tratarse de un simulador en modo texto, los 
-atributos x e y serán internamente de tipo "byte", si bien su "getter" 
-devolverá un número entero, y su "setter" recibirá un número entero (y lo mismo 
-ocurrirá con el constructor). Habrá un método "Dibujar", que muestre un 
-supuesto pez en pantalla (por ejemplo, "><=>"), en esas coordenadas x e y. El 
-método "Nadar" incrementará la coordenada x. Añade un destructor que escriba 
-"Aquí acabó la vida del pez". El programa de prueba creará un pez en las 
-coordenadas 15, 15, y lo hará nadar (y lo dibujará) cada vez que se pulse una 
-tecla, terminando la ejecución cuando esa tecla sea ESC.
-*/
+﻿/* 141. Crea otra clase que herede de Pez (la que tú desees), y que 
+cambie ligeramente el comportamiento y/o la apariencia. Haz que dos 
+peces de clases distintas naden en la pantalla. Como mejora opcional, 
+puedes hacer que su "imagen" cambie cuando "reboten" en un extremo de 
+la pantalla. Por ejemplo, puede pasar de ser "><=>" a ser ""<=><". */
 
 // Mario (...), retoques por Nacho
 
