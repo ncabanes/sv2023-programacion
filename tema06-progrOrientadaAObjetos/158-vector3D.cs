@@ -48,22 +48,22 @@ class Vector3D
         this.y += v2.y;
         this.z += v2.z;
     }
+}
 
-
-    class PruebaVector3D
+class PruebaVector3D
+{
+    static void Main()
     {
-        static void Main()
-        {
-            Vector3D[] vector = new Vector3D[2];
-            vector[0] = new Vector3D(3, 2, 6);
-            vector[1] = new Vector3D(5, 3, 1);
+        Vector3D[] vector = new Vector3D[2];
+        vector[0] = new Vector3D(3, 2, 6);
+        vector[1] = new Vector3D(5, 3, 1);
 
-            Console.WriteLine("v1 es: " + vector[0]);
-            Console.WriteLine("La longitud de v1 es: "+vector[0].GetModulo());
+        Console.WriteLine("v1 es: " + vector[0]);
+        Console.WriteLine("La longitud de v1 es: "+vector[0].GetModulo());
 
-            Console.WriteLine("v2 es: " + vector[1]);
-            vector[0].Sumar( vector[1] );
-            Console.WriteLine("La suma de ambos es: " + vector[0]);
-        }
+        Console.WriteLine("v2 es: " + vector[1]);
+        vector[0].Sumar( vector[1] );
+        Console.WriteLine("La suma de ambos es: " + vector[0]);
     }
 }
+
