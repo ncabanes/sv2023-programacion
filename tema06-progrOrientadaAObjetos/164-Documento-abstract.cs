@@ -1,13 +1,14 @@
 /*
- * 164. A partir de la "solución oficial" del ejercicio 160 (Documento y Libro + Menu),
- * crea una variante en la que la clase "Documento" no incluya el número de páginas,
- * sea abstracta y de ella hereden tanto una clase "DocumentoImpreso", 
- * que sí tendrá número de páginas, como una "DocumentoDigital", que tendrá una URL en vez de un número de páginas.
- * El "Libro" será un subtipo de DocumentoImpreso. 
- * Retoca el resto de métodos y el programa gestor como creas conveniente, 
- * de modo que se pueda añadir tanto libros como documentos digitales.
- 
-  julio
+164. A partir de la "solución oficial" del ejercicio 160 (Documento y 
+Libro + Menu), crea una variante en la que la clase "Documento" no 
+incluya el número de páginas, sea abstracta y de ella hereden tanto una 
+clase "DocumentoImpreso", que sí tendrá número de páginas, como una 
+"DocumentoDigital", que tendrá una URL en vez de un número de páginas. 
+El "Libro" será un subtipo de DocumentoImpreso. Retoca el resto de 
+métodos y el programa gestor como creas conveniente, 
+de modo que se pueda añadir tanto libros como documentos digitales.
+
+julio
  
  */
 
@@ -52,13 +53,15 @@ class PruebaDeDocumento
 
                 if (opcion == "1")
                 {
-                    documentos[numDatos] = new DocumentoGenerico(titulo, autor, ubicacion);
+                    documentos[numDatos] = new DocumentoGenerico(
+                        titulo, autor, ubicacion);
                     numDatos++;
                 }
 
-                if (opcion == "2")
+                else if (opcion == "2")
                 {
-                    string esLibro = PedirDato("Este docuemnto es un libro?, si o no:  ").ToLower();
+                    string esLibro = PedirDato(
+                        "Este documento es un libro?, si o no:  ").ToLower();
 
                     if (esLibro != "si" && esLibro != "no")
                     {
@@ -66,28 +69,30 @@ class PruebaDeDocumento
                     }
                     else
                     {
-                        int paginas = Convert.ToInt32(PedirDato("Número de páginas: "));
+                        int paginas = Convert.ToInt32(
+                            PedirDato("Número de páginas: "));
 
                         if (esLibro == "si")
                         {
                             string tapa = PedirDato("Tapa dura (D) o blanda (B): ");
-                            documentos[numDatos] = new Libro(titulo, autor, paginas,
-                            ubicacion, tapa);
+                            documentos[numDatos] = new Libro(
+                                titulo, autor, paginas, ubicacion, tapa);
                             numDatos++;
                         }
-                        if (esLibro == "no")
+                        else
                         {
-                            documentos[numDatos] = new DocumentoImpreso(titulo, autor, paginas,
+                            documentos[numDatos] = new DocumentoImpreso(
+                                titulo, autor, paginas,
                             ubicacion);
                             numDatos++;
                         }
                     }
                 }
-
-                if (opcion == "3")
+                else if (opcion == "3")
                 {
                     string url = PedirDato("Introduce la URL: ");
-                    documentos[numDatos] = new DocumentoDigital(titulo, autor, ubicacion, url);
+                    documentos[numDatos] = new DocumentoDigital(
+                        titulo, autor, ubicacion, url);
                     numDatos++;
                 }
             }
@@ -165,23 +170,7 @@ class PruebaDeDocumento
 
     public static void Ordenar(Documento[] documentos, int numDatos)
     {
-        for (int i = 0; i < numDatos; i++)
-        {
-            for (int j = i + 1; j < numDatos; j++)
-            {
-                if ((documentos[i].GetTitulo()).ToUpper().CompareTo(
-                    documentos[j].GetTitulo().ToUpper()) > 0 ||
-                    ((documentos[i].GetTitulo().ToUpper() ==
-                    documentos[j].GetTitulo().ToUpper())
-                    && (documentos[i].GetAutor()).ToUpper().CompareTo(
-                    documentos[j].GetAutor().ToUpper()) > 0))
-                {
-                    Documento docTemp = documentos[i];
-                    documentos[i] = documentos[j];
-                    documentos[j] = docTemp;
-                }
-            }
-        }
+        Array.Sort(documentos, 0, numDatos);
     }
 
     static void Main()
@@ -224,7 +213,7 @@ class PruebaDeDocumento
 
 // --------------------
 
-abstract class Documento
+abstract class Documento  : IComparable<Documento>
 {
     protected string titulo, autor, ubicacion;
 
@@ -251,17 +240,25 @@ abstract class Documento
 
     public override string ToString()
     {
-        return "Autor = " + autor + ", Título = " + titulo + ", ubicación = " + ubicacion;
+        return "Autor = " + autor + ", Título = " 
+            + titulo + ", ubicación = " + ubicacion;
     }
 
     public bool Contiene(string texto)
     {
-        bool contiene = false;
         if (ToString().ToUpper().Contains(texto.ToUpper()))
         {
-            contiene = true;
+            return true;
         }
-        return contiene;
+        return false;
+    }
+    
+    public int CompareTo(Documento otro)
+    {
+        if (titulo.ToUpper() != otro.titulo.ToUpper())
+            return titulo.ToUpper().CompareTo( otro.titulo.ToUpper() );
+        else
+            return autor.ToUpper().CompareTo( otro.autor.ToUpper() );
     }
 }
 
@@ -272,15 +269,16 @@ class Libro : DocumentoImpreso
 {
     protected char tapa;
 
-    public char GetTapa() { return tapa; }
-    public void SetTapa(string tapa)
-    {
-        if (tapa != null) this.tapa = Convert.ToChar(tapa.ToUpper()[0]);
-    }
     public Libro(string titulo, string autor, int paginas, string ubicacion,
         string tapa) : base(titulo, autor, paginas, ubicacion)
     {
         this.tapa = Convert.ToChar(tapa.ToUpper()[0]);
+    }
+
+    public char GetTapa() { return tapa; }
+    public void SetTapa(string tapa)
+    {
+        if (tapa != null) this.tapa = Convert.ToChar(tapa.ToUpper()[0]);
     }
 
     public override string ToString()
