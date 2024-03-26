@@ -28,10 +28,12 @@ class micopiador
             else if (File.Exists(args[0]))
             {
                 const int TAMANYO_BUFFER = 10240;
-                FileStream ficheroSalida = File.Create(args[1]);
-                FileStream ficheroEntrada = File.OpenRead(args[0]);
+                
                 try
                 {
+                    FileStream ficheroSalida = File.Create(args[1]);
+                    FileStream ficheroEntrada = File.OpenRead(args[0]);
+                    
                     int leidos;
                     do
                     {
@@ -42,6 +44,9 @@ class micopiador
                         ficheroSalida.Write(datos, posicion, leidos);
                     }
                     while (leidos == 10240);
+                    
+                    ficheroEntrada.Close();
+                    ficheroSalida.Close();
                 }
                 catch (PathTooLongException)
                 {
@@ -55,8 +60,7 @@ class micopiador
                 {
                     Console.WriteLine("Error general: " + e.Message);
                 }
-                ficheroEntrada.Close();
-                ficheroSalida.Close();
+                
             }
         }
     }
